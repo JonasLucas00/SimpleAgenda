@@ -1,0 +1,10 @@
+## <tipo>: <resumo curto da mudança>
+
+## [Detalhes]
+## - 
+
+## [Motivo]
+## - 
+
+## [Referências]
+## - 
