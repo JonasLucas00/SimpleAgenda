@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%-include('includes/header')%>
+    <%-include('includes/navbar')%>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2"></div>
+
+            <div class="col-lg-8 my-5">
+                <%-include ('includes/messages')%>
+                <h1 class=" text-center">Adicionar contatos</h1>
+                <p class="text-center lead">Preencha nome, e ao menos um dados de contato.</p>
+                
+                <table>
+                    <tr>
+                        <td>nome</td>
+                        <td>telefone</td>
+                        <td>email</td>
+                    </tr>
+                    <tr>
+                        <form action="/contatos/add" method="post">
+                            <td><input type="text" name="nome" placeholder="nome"></td>
+                            <td><input type="text" name="telefone" placeholder="telefone"></td>
+                            <td><input type="email" name="email" placeholder="email"></td>
+                            <td><button type="submit">enviar</button></td>
+                        </form>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="col-lg-2"></div>
+        </div>
+    </div>
+    <%-include('includes/footer')%>
+</body>
+</html>

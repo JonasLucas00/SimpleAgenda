@@ -46,7 +46,7 @@ module.exports.login = async (req,res)=>{
         req.session.save(()=>{ // crio a session
             // console.log(`user: ${homeform.user}`);
             console.log(`session: ${req.session.user}`);
-            return res.redirect('/login');
+            return res.redirect('/');
         })
         
     } catch (error) {
