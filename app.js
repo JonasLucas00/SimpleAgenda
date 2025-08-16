@@ -5,6 +5,7 @@ const viewConfig = require('./config/viewConfig.js');
 const sessionConfig = require('./config/sessionConfig.js');
 const flashConfig = require('./config/flashConfig.js');
 const connectDB = require('./config/mongoDB.js');
+const middlewareSession = require('./src/middlewares/midlewares.js');
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
@@ -12,6 +13,7 @@ app.use(express.urlencoded({extended:true}));
 sessionConfig(app);
 flashConfig(app)
 viewConfig(app);
+app.use(middlewareSession.sessionMidlleware);
 app.use('/', router);
 connectDB(app);
 
