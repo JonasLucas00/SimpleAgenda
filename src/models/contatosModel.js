@@ -27,6 +27,16 @@ class Contato{
             return;
         }
     }
+
+    static async getContacts(){
+        try {
+            const contacts = await contatoModel.find();
+            return contacts
+        } catch (error) {
+           console.log(error)
+            return 
+        }
+    }
     
     validation(){
         this.cleanUp()

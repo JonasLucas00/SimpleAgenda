@@ -41,6 +41,9 @@
     - [x] criar view com form para adicionar contatos ao BD
     - [x] criar model para salvar e validar contatos no BD, validacao etc
 
+[] listar contatos na rota 'index'
+    - 
+
 # expectativa de termino
 
 - 10hrs

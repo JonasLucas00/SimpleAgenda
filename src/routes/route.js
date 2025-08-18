@@ -14,4 +14,5 @@ router.get('/login/logout', loginController.logout);
 router.get('/contatos', contatosController.renderContato )
 router.post('/contatos/add', contatosController.contatosAdd)
 
+
 module.exports = router;

@@ -24,5 +24,5 @@ module.exports.contatosAdd = async(req,res)=>{
     }
     
     res.redirect('/contatos')
-
 }
+
