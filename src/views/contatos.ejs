@@ -24,10 +24,15 @@
                         <td>email</td>
                     </tr>
                     <tr>
-                        <form action="/contatos/add" method="post">
-                            <td><input type="text" name="nome" placeholder="nome"></td>
-                            <td><input type="text" name="telefone" placeholder="telefone"></td>
-                            <td><input type="email" name="email" placeholder="email"></td>
+                        <%if(contato && contato._id){%>
+                            <form action="/contatos/edit/edit" method="post">
+                                <input type="hidden" value="<%=contato._id%>" name="id">
+                        <%}else{%>
+                            <form action="/contatos/add" method="post">
+                        <%}%>
+                            <td><input type="text" name="nome" placeholder="nome" value="<%=contato.nome%>"></td>
+                            <td><input type="text" name="telefone" placeholder="telefone" value="<%=contato.telefone%>"></td>
+                            <td><input type="email" name="email" placeholder="email" value="<%=contato.email%>"></td>
                             <td><button type="submit">enviar</button></td>
                         </form>
                     </tr>

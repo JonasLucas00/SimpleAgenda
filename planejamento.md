@@ -41,8 +41,12 @@
     - [x] criar view com form para adicionar contatos ao BD
     - [x] criar model para salvar e validar contatos no BD, validacao etc
 
-[] listar contatos na rota 'index'
-    - 
+[x] listar contatos na rota 'index'
+    - [x] apontar para rotas de edição e exclusão
+
+[x] Criar metodo de edição de contato
+
+[x] Criar metodo de exclusão de contato
 
 # expectativa de termino
 

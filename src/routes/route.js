@@ -13,6 +13,9 @@ router.get('/login/logout', loginController.logout);
 
 router.get('/contatos', contatosController.renderContato )
 router.post('/contatos/add', contatosController.contatosAdd)
+router.get('/contatos/edit/:id', contatosController.contatosEdit); // Leva para pagina de edição de contato
+router.post('/contatos/edit/edit', contatosController.editEdit); // Efetua a edição do contato no BD
+router.post('/contatos/delete', contatosController.contatosDelete)
 
 
 module.exports = router;

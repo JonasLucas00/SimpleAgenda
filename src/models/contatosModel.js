@@ -28,6 +28,11 @@ class Contato{
         }
     }
 
+    static async deleteContact(id){
+        await contatoModel.findByIdAndDelete(id);
+        return 
+    }
+
     static async getContacts(){
         try {
             const contacts = await contatoModel.find();
@@ -35,6 +40,29 @@ class Contato{
         } catch (error) {
            console.log(error)
             return 
+        }
+    }
+
+    static async getContactsById(id){
+        try {
+            const contato = await contatoModel.findById(id);
+            return contato
+        } catch (error) {
+            console.log(error)
+            return
+        }
+    }
+
+    async editContact(){
+        this.validation()
+        if(this.erros.length > 0) return
+
+        try {
+           const deletedContact =  await contatoModel.findByIdAndUpdate(this.body.id, this.body, {new:true})
+            return deletedContact
+        } catch (error) {
+            console.log(`Erro model: ${error}`)
+            return
         }
     }
     

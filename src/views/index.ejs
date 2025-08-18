@@ -30,9 +30,13 @@
                             <td><%=contato.nome%></td>
                             <td><%=contato.telefone%></td>
                             <td><%=contato.email%></td>
-                            <td><button type="submit">Editar</button></td>
-                            <td><button type="submit">Exluir</button></td>
-                            
+                            <td><a href="/contatos/edit/<%=contato._id%>">Editar</a></td>
+                            <td>
+                                <form action="/contatos/delete" method="post">
+                                    <input type="hidden" value="<%=contato._id%>" name="id">
+                                    <button type="submit">Excluir</button>
+                                </form>
+                            </td>
                         </tr>
                         
                     <%})%>
