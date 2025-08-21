@@ -15,8 +15,7 @@ module.exports.contatosAdd = async(req,res)=>{
             req.flash('error', `${contato.erros}`)
             return res.redirect('/contatos')
         }
-        console.log('sucesso contatosAdd')
-        req.flash('success', 'sucesso contatosAdd')
+        req.flash('success', 'Contato adicionado')
 
     } catch (error) {
         console.error(error)
@@ -52,7 +51,6 @@ module.exports.editEdit = async (req, res)=>{
 }
 
 module.exports.contatosDelete = async (req,res)=>{
-    console.log(req.body.id)
     try {
         await Contato.deleteContact(req.body.id)
         // console.log('Contato apagado');

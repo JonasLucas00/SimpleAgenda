@@ -20,7 +20,6 @@ class Contato{
 
         try {
            const contato = await contatoModel.create(this.body);
-            console.log('Contato salvo')
             return;
         } catch (error) {
             console.error(error)
