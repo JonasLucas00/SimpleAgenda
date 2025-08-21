@@ -30,3 +30,7 @@ Antes de rodar o projeto, você precisa ter instalado em sua máquina:
 3. Configuro o arquivo .env com seu link de conexão ao banco de dados (MongoDB)
 
 4. Para iniciar o projeto rode `npm run start` (script configurado no package.json), pode ser alterado caso queira
+
+## Créditos
+
+Este projeto foi desenvolvido como parte dos meus estudos em J. Projeto inspirado pelo curso "Javascript e TypeScript - front-end e back-end (Full Stack) - Node, Express, noSQL, React, hooks, Redux, Design Patterns" da Udemy.
