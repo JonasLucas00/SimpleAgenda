@@ -1,0 +1,67 @@
+a.edit-btn,
+a.edit-btn:link,
+a.edit-btn:visited,
+a.edit-btn:hover,
+a.edit-btn:active {
+    text-decoration: none;
+}
+
+body{
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.barra-navegacao{
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.login-container{
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    margin: 20px auto;
+}
+
+.title-container{
+    background-color: rgba(0, 0, 0, 0.7);
+    color: aliceblue;
+    border-radius: 8px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.tabela-container{
+    /* background-color: rgba(0, 0, 0, 0.4); */
+    text-align: center;
+    color: aliceblue;
+    
+}
+
+.tabela-tabela{
+    color: aliceblue;
+    text-align: center;
+    
+}
+
+.edit-btn{
+    padding: 3px 6px;
+}
+
+.edit-btn, .Excluir-btn{
+    border: 1px solid black;
+    border-radius: 4px;
+    font-size: 18px;
+    color: aliceblue;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 4px 4px 8px rgba(0,0,0,0.3);
+}
+
+.Excluir-btn:hover{
+    color: rgba(255, 0, 0, 0.644);
+}
+
+.td-acoes{
+    left: 10px;
+    color:aliceblue;
+}

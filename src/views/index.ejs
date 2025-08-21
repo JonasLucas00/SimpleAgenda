@@ -4,25 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    
 </head>
 <body>
     <%-include('includes/header')%>
     <%-include('includes/navbar')%>
-    <div class="container">
+    <div class="container index-container">
         <div class="row">
             <div class="col-lg-2"></div>
 
-            <div class="col-lg-8 my-5">
+            <div class="col-lg-8 my-5 title-container">
                 <%-include ('includes/messages')%>
                 <h1 class=" text-center">Agenda</h1>
                 <p class="text-center lead">Seus contatos estão abaixo</p>
 
-                <div class="responsive-table">
-                    <table class="table my-3">
+                <div class="responsive-table  tabela-container">
+                    <table class="table my-3 tabela-tabela">
                         <tr>
-                            <td>nome</td>
-                            <td>telefone</td>
-                            <td>email</td>
+                            <td>Nome</td>
+                            <td>Telefone</td>
+                            <td>Email</td>
+                            <td class="td-acoes">Ações</td>
                          </tr>
                 
                      <%contacts.forEach((contato)=>{%>
@@ -30,11 +32,11 @@
                             <td><%=contato.nome%></td>
                             <td><%=contato.telefone%></td>
                             <td><%=contato.email%></td>
-                            <td><a href="/contatos/edit/<%=contato._id%>">Editar</a></td>
+                            <td><a href="/contatos/edit/<%=contato._id%>" class="edit-btn">Editar</a></td>
                             <td>
                                 <form action="/contatos/delete" method="post">
                                     <input type="hidden" value="<%=contato._id%>" name="id">
-                                    <button type="submit">Excluir</button>
+                                    <button type="submit" class="Excluir-btn">Excluir</button>
                                 </form>
                             </td>
                         </tr>
@@ -49,4 +51,5 @@
     </div>
     <%-include('includes/footer')%>
 </body>
+
 </html>

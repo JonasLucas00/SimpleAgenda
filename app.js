@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const path = require('path');
 const router = require('./src/routes/route.js');
 const viewConfig = require('./config/viewConfig.js');
 const sessionConfig = require('./config/sessionConfig.js');
@@ -9,6 +10,7 @@ const middlewareSession = require('./src/middlewares/midlewares.js');
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
+app.use(express.static(path.join(__dirname, 'public')));
 
 sessionConfig(app);
 flashConfig(app)

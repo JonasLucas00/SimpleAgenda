@@ -48,6 +48,10 @@
 
 [x] Criar metodo de exclusão de contato
 
+[x] Aplicar estilos nas views
+    - [x] configurar os arquivos estaticos no app.js
+    - [x] colocar o link do CSS nas views
+
 # expectativa de termino
 
 - 10hrs
