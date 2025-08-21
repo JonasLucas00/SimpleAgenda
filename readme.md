@@ -33,4 +33,4 @@ Antes de rodar o projeto, você precisa ter instalado em sua máquina:
 
 ## Créditos
 
-Este projeto foi desenvolvido como parte dos meus estudos em J. Projeto inspirado pelo curso "Javascript e TypeScript - front-end e back-end (Full Stack) - Node, Express, noSQL, React, hooks, Redux, Design Patterns" da Udemy.
+Este projeto foi desenvolvido como parte dos meus estudos em JS. Projeto inspirado pelo curso "Javascript e TypeScript - front-end e back-end (Full Stack) - Node, Express, noSQL, React, hooks, Redux, Design Patterns" da Udemy.
