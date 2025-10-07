@@ -1,19 +1,22 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
 
+let isConnected = false; // controla se já existe uma conexão ativa
 
-module.exports = async function connectDB(app){
-    try {
-        await mongoose.connect(process.env.CONNECTIONSTRING)
-        app.emit('ready');
-        console.log('BD conectado')
-    } catch (error) {
-        console.error(error)
+async function connectDB() {
+    if (isConnected) {
+        // Se já está conectado, reaproveita
+        console.log('🔄 Conexão MongoDB reaproveitada.');
+        return;
     }
 
-    process.on('SIGINT', async () => {
-    console.log('Encerrando app...');
-    await mongoose.disconnect();
-    process.exit(); // Encerra o processo, finaliza DB com ctrl+c
-    });
+    try {
+        const conn = await mongoose.connect(process.env.CONNECTIONSTRING);
+        isConnected = conn.connections[0].readyState === 1;
+        console.log('Conectado ao MongoDB com sucesso!');
+    } catch (error) {
+        console.error('Erro ao conectar ao MongoDB:', error);
+    }
 }
+
+module.exports = connectDB;

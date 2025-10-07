@@ -2,7 +2,7 @@
   "name": "projetoagendaforreal",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "api/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js"
@@ -19,6 +19,7 @@
     "express": "^5.1.0",
     "express-session": "^1.18.1",
     "mongoose": "^8.16.1",
+    "serverless-http": "^4.0.0",
     "validator": "^13.15.15"
   },
   "devDependencies": {
