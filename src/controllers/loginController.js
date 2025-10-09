@@ -33,7 +33,7 @@ module.exports.login = async (req, res) => {
     }
 
     try {
-        const login = await homeform.login()
+        await homeform.login()
         if (homeform.errors.length > 0) {
             console.log(`Erros detectados: ${homeform.errors}`);
             req.flash('error', `${homeform.errors}`)
@@ -42,9 +42,9 @@ module.exports.login = async (req, res) => {
 
         req.session.user = homeform.user
         req.flash('success', 'Login efetuado');
-
+        console.log(req.session.user.id)
         req.session.save(() => { // crio a session
-            // console.log(`user: ${homeform.user}`);
+
             console.log(`session: ${req.session.user}`);
             return res.redirect('/');
         })

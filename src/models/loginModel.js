@@ -9,25 +9,25 @@ const Schema = mongoose.Schema({
 
 const loginModel = mongoose.model('register', Schema);
 
-class Homeform{
-    constructor(body){
+class Homeform {
+    constructor(body) {
         this.body = body;
         this.errors = []
         this.user = null
     }
 
-    async register(){
+    async register() {
         this.validador()
-        if(this.errors.length > 0) return 
-    
+        if (this.errors.length > 0) return
+
         await this.alredyRegister()
-        
-        if(this.errors.length > 0) return 
+
+        if (this.errors.length > 0) return
 
         try {
             const hashPassword = await bcrypt.hash(this.body.password, 10);
 
-            const userData = await loginModel.create({email: this.body.email, password: hashPassword});
+            const userData = await loginModel.create({ email: this.body.email, password: hashPassword });
             console.log(`Registro efetuado ${userData}`);
             return
         } catch (error) {
@@ -38,12 +38,12 @@ class Homeform{
 
     async login() {
         this.validador()
-        if(this.errors.length > 0 ) return 
+        if (this.errors.length > 0) return
 
         try {
-            this.user = await loginModel.findOne({email: this.body.email})
-            // console.log(this.user)
-            if(this.user){
+            this.user = await loginModel.findOne({ email: this.body.email })
+            console.log(this.user)
+            if (this.user) {
                 console.log(`usuario localizado`);
                 return
             }
@@ -57,11 +57,11 @@ class Homeform{
 
     }
 
-    validador(){
+    validador() {
         this.cleanUp()
-        const isValid = validator.isEmail(this.body.email) 
+        const isValid = validator.isEmail(this.body.email)
         // console.log(isValid)
-        if(!isValid) return this.errors.push('email invalido')
+        if (!isValid) return this.errors.push('email invalido')
         return
     }
 
@@ -69,19 +69,19 @@ class Homeform{
     //     this.body.password = 
     // }
 
-    async alredyRegister(){
-        const isRegistered = await loginModel.findOne({email:this.body.email})
-        if(isRegistered) return this.errors.push('usuario já esta registrado')
+    async alredyRegister() {
+        const isRegistered = await loginModel.findOne({ email: this.body.email })
+        if (isRegistered) return this.errors.push('usuario já esta registrado')
         console.log(`Ainda não registrado`)
-        
+
     }
 
-    cleanUp(){
-        if(typeof this.body.email && typeof this.body.password !== 'string'){
+    cleanUp() {
+        if (typeof this.body.email && typeof this.body.password !== 'string') {
             return this.errors.push('diferente de string') // trocar para outro erro na flash message. trocar valor do body para ""?
         }
 
-        if(this.body.password.length < 3|| this.body.password.length > 12){
+        if (this.body.password.length < 3 || this.body.password.length > 12) {
             return this.errors.push('Erro comprimento senha')// alterar depois a msg
         }
 
